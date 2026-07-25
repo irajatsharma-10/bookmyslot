@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Redis dump
+dump.rdb
+
+# IDE / AI tooling
+.windsurf/
+.claude/
+
+# Uploaded files (runtime-generated)
+public/uploads/*
+!public/uploads/.gitkeep
