@@ -6,10 +6,18 @@ vi.mock('next-auth', () => ({
   getServerSession: vi.fn(() => ({ user: { id: 'user-1' } })),
 }));
 
+vi.mock('@/lib/redis', () => ({
+  redis: {},
+  reserveSlot: vi.fn().mockResolvedValue(true),
+}));
+
 // Mock Prisma
 vi.mock('@/lib/db', () => ({
   prisma: {
     $transaction: vi.fn(),
+    slot: {
+      findUnique: vi.fn().mockResolvedValue({ capacity: 5 }),
+    }
   },
 }));
 
