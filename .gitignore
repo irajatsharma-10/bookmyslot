@@ -50,3 +50,6 @@ dump.rdb
 # Uploaded files (runtime-generated)
 public/uploads/*
 !public/uploads/.gitkeep
+.agents/
+AGENTS.md
+CLAUDE.md
